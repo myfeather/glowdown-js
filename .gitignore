@@ -34,11 +34,6 @@ yarn-error.log*
 # TypeScript编译缓存
 .tsbuildinfo
 
-# 包管理器锁文件
-package-lock.json
-yarn.lock
-pnpm-lock.yaml
-
 # 测试文件
 *.test.js
 *.test.ts
