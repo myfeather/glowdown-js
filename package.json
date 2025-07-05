@@ -4,6 +4,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/myfeather/glowdown-js.git"
+  },
   "description": "A library for applying grayscale filter on memorial days",
   "main": "dist/src/glowdown.js",
   "types": "dist/src/glowdown.d.ts",
