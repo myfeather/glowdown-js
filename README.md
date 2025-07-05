@@ -179,3 +179,9 @@ npm publish
 ## 许可证
 
 MIT
+
+
+> TIPS:
+> Don't forget the fucking **repository** key in your `package.json` file.
+> --For other developers in this repository.
+> --minc_nice_100
