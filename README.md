@@ -4,9 +4,9 @@
 
 ## 功能特性
 
-- 根据配置的纪念日日期自动应用灰度效果
+- 根据配置的纪念日日期自动触发自定义行为
 - 支持从JSON文件加载纪念日数据
-- 可自定义纪念日触发时的行为
+- **必须明确提供`onMemorialDay`回调来自定义纪念日触发时的行为，库不再默认应用任何样式或效果。**
 - 完全类型安全的TypeScript实现
 
 ## 安装
@@ -25,6 +25,10 @@ yarn add glowdown
 
 ```typescript
 import Glowdown from 'glowdown';
+
+// 如果Node.js环境没有全局fetch，需要安装node-fetch并全局引入
+// import fetch from 'node-fetch';
+// (global as any).fetch = fetch;
 
 const gd = new Glowdown({ 
   dataUrl: './times.json' // 纪念日数据文件路径
@@ -59,21 +63,20 @@ gd.applyStyle();
 
 ```typescript
 const gd = new Glowdown({
-  dates: [ // 直接传入纪念日数据
+  dates: [ // 直接传入纪念日数据，支持跨年纪念日
     {
-      name: "南京大屠杀纪念日",
-      start: { y: -1, m: 12, d: 13, h: 0, min: 0 },
-      end: { y: -1, m: 12, d: 13, h: 24, min: 59 }
+      name: "跨年纪念日示例",
+      start: { y: -1, m: 12, d: 31, h: 0, min: 0 },
+      end: { y: -1, m: 1, d: 1, h: 23, min: 59 }
     }
   ],
   onMemorialDay: () => {
-    // 自定义纪念日行为
+    // 这里必须自定义纪念日触发时的行为
     document.body.style.filter = 'grayscale(100%)';
-    alert('今天是南京大屠杀纪念日');
+    alert('今天是跨年纪念日');
   }
 });
 ```
-
 ## API 文档
 
 ### `Glowdown` 类
@@ -182,6 +185,7 @@ MIT
 
 
 > TIPS:
-> Don't forget the fucking **repository** & **version** key in your `package.json` file.
-> --For other developers in this repository.
-> --minc_nice_100
+> Don't forget the fucking **repository** & **version** key in your `package.json` file. 
+> --For other developers in this repository. /n
+> --minc_nice_100 /n
+ 
