@@ -1,6 +1,6 @@
 {
   "name": "glowdown",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "repository": {
     "type": "git",
     "url": "https://github.com/myfeather/glowdown-js.git"
@@ -11,8 +11,7 @@
   "type": "module",
   "scripts": {
     "build": "tsc && rollup -c",
-    "prepublish": "npm run build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepublish": "npm run build"
   },
   "devDependencies": {
     "@rollup/plugin-typescript": "^10.0.0",
