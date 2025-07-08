@@ -6,8 +6,8 @@
     "url": "https://github.com/myfeather/glowdown-js.git"
   },
   "description": "A library for applying grayscale filter on memorial days",
-  "main": "dist/glowdown.js",
-  "types": "dist/glowdown.d.ts",
+  "main": "./dist/glowdown.cjs",
+  "types": "./dist/glowdown.d.ts",
   "type": "module",
   "scripts": {
     "build": "tsc && rollup -c",
@@ -33,7 +33,10 @@
     "dist/**/*"
   ],
   "exports": {
-    "import": "./dist/glowdown.browser.js",
-    "require": "./dist/glowdown.js"
+    ".": {
+      "import": "./dist/glowdown.mjs",
+      "require": "./dist/glowdown.cjs",
+      "types": "./dist/glowdown.d.ts"
+    }
   }
 }
