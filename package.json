@@ -1,13 +1,13 @@
 {
   "name": "glowdown",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "repository": {
     "type": "git",
     "url": "https://github.com/myfeather/glowdown-js.git"
   },
   "description": "A library for applying grayscale filter on memorial days",
-  "main": "dist/src/glowdown.js",
-  "types": "dist/src/glowdown.d.ts",
+  "main": "dist/glowdown.js",
+  "types": "dist/glowdown.d.ts",
   "type": "module",
   "scripts": {
     "build": "tsc && rollup -c",
