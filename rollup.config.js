@@ -3,7 +3,7 @@ import typescript from '@rollup/plugin-typescript';
 export default {
   input: 'src/glowdown.ts',
   output: {
-    file: 'dist/glowdown.browser.js',
+    file: 'dist/glowdown.js',
     format: 'umd',
     name: 'Glowdown',
     globals: {
